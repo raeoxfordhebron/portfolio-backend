@@ -19,6 +19,12 @@ app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
+// Create Route
+app.post("/projects", async (req, res) => {
+    projects.push(req.body)
+    res.json(projects)
+})
+
 // Route for retrieving projects
 app.get("/projects", (req, res) => {
     res.json(projects)
